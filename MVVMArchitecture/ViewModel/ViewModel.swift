@@ -21,7 +21,7 @@ class ViewModel {
     }
 
     func valueSet(_ one: String, two: String) {
-        // decord or init
+        // decode or init
         model.value = Model(one: one, two: two)
     }
 }

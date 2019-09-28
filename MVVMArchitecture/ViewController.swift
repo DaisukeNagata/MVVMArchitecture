@@ -16,10 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         views.bt.addTarget(self, action: #selector(btAction), for: .touchUpInside)
-        view.addSubview(views.labelOne)
-        view.addSubview(views.labelTwo)
-        view.addSubview(views.bt)
-
+        view.addSubview(views)
         views.vm.observe(for: views.vm.model) {
             [weak self ](value) in
             guard let selfStrong = self else { return }

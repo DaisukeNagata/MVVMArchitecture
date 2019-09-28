@@ -27,6 +27,10 @@ class DesinView: UIView {
 
     private func desgin() {
         self.frame = UIScreen.main.bounds
+        self.addSubview(labelOne)
+        self.addSubview(labelTwo)
+        self.addSubview(bt)
+
         labelOne.frame = CGRect(x: 0, y: 100, width: self.frame.width, height: 100)
         labelTwo.frame = CGRect(x: 0, y: 200, width: self.frame.width, height: 100)
         bt.frame = CGRect(x: 0, y: 300, width: self.frame.width, height: 100)
