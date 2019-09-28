@@ -9,6 +9,7 @@
 import Foundation
 
 final class Observable<ObservedType> {
+
     typealias Observer = (_ observable: Observable<ObservedType>, ObservedType) -> Void
 
     private var observers: [Observer]
