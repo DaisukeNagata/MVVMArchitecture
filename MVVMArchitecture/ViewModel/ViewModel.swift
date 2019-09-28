@@ -19,6 +19,9 @@ final class ViewModel: Observer {
     func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ()) {
         observable.bind { observable, value  in
             DispatchQueue.main.async {
+                // let o = observable as? Observable<Model>
+                // print(o?.value?.one)
+                // print(o?.value?.two)
                 with(value)
             }
         }
@@ -30,7 +33,6 @@ final class ViewModel: Observer {
             switch result {
             case .success(let s):
                 self.valueSet(s)
-             print(s)
                 break
             case.failure(let f):
                 print(f)
