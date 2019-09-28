@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewModel {
+final class ViewModel {
 
     let model : Observable<Model> = Observable()
     

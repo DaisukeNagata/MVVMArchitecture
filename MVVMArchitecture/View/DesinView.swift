@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DesinView: UIView {
+final class DesinView: UIView {
     
     let vm = ViewModel()
     let labelOne = UILabel()
