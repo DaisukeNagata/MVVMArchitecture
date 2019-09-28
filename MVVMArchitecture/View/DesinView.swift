@@ -19,7 +19,7 @@ final class DesinView: UIView {
 
     private let topHeight: CGFloat = UINavigationController.init().navigationBar.frame.height +
     (UIWindow.init().windowScene?.statusBarManager?.statusBarFrame.height ?? UIApplication.shared.statusBarFrame.height)
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -39,7 +39,7 @@ final class DesinView: UIView {
         self.addSubview(labelTwo)
         self.addSubview(imageTwo)
         self.addSubview(bt)
-        
+
         layoutAnchor(labelOne, xAxisAnchor: self.centerXAnchor, constantY: self.topAnchor, widthmultiplier: 1, heightmultiplier: 0.1, height: topHeight)
         layoutAnchor(imageOne, xAxisAnchor: labelOne.centerXAnchor, constantX: self.frame.width/2 - self.frame.width/9.96, constantY: self.topAnchor, widthmultiplier: 0.2, heightmultiplier: 0.1, height: topHeight)
 
