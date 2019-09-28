@@ -26,10 +26,9 @@ class ViewController: UIViewController {
     }
 
     @objc func btAction() {
-        if views.labelOne.text == "456" {
-            views.vm.valueSet("123", two: "456")
-        } else {
-            views.vm.valueSet("456", two: "123")
+        guard views.labelOne.text == "123" else {
+            return views.vm.valueSet(Model.init(one: "123", two: "456"))
         }
+        views.vm.valueSet(Model.init(one: "456", two: "123"))
     }
 }
