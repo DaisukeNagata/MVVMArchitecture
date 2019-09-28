@@ -41,7 +41,7 @@ final class DesinView: UIView {
         bt.backgroundColor = .yellow
     }
 
-    private func observe(){
+    private func observe() {
         vm.observe(for: vm.model) {
             [weak self ](value) in
             guard let selfStrong = self else { return }
