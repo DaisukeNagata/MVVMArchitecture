@@ -6,6 +6,7 @@
 //  Copyright © 2019 永田大祐. All rights reserved.
 //
 import Foundation
+
 struct Model: Codable {
 
    let body: [Nested]
