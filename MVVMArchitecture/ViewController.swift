@@ -17,24 +17,6 @@ final class ViewController: UIViewController {
 
         views.bt.addTarget(self, action: #selector(btAction), for: .touchUpInside)
         view.addSubview(views)
-
-        views.vm.observe(for: views.vm.model) {
-            [weak self ](value) in
-            guard let selfStrong = self else { return }
-            _ = value.body.map { v in
-                
-                let data = try? Data(contentsOf: v.url)
-                let ima = UIImage(data: data ?? Data())
-                
-                if selfStrong.views.imageOne.image == nil {
-                    selfStrong.views.labelTwo.text = v.title
-                    selfStrong.views.imageTwo.image = ima
-                }
-                
-                selfStrong.views.labelOne.text = v.title
-                selfStrong.views.imageOne.image = ima
-            }
-        }
     }
 
     @objc func btAction() {

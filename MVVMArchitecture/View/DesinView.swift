@@ -24,6 +24,7 @@ final class DesinView: UIView {
         super.init(frame: frame)
 
          desgin()
+         observe()
     }
 
     required init?(coder: NSCoder) {
@@ -65,4 +66,23 @@ final class DesinView: UIView {
              v.widthAnchor.constraint(equalTo  : self.widthAnchor, multiplier: widthmultiplier ?? 0).isActive = true
              v.heightAnchor.constraint(equalTo : self.heightAnchor, multiplier: heightmultiplier ?? 0).isActive = true
          }
+    
+    private func observe() {
+        vm.observe(for: vm.model) {
+            [weak self ](value) in
+            guard let selfStrong = self else { return }
+            _ = value.body.map { v in
+
+                let data = try? Data(contentsOf: v.url)
+                let ima = UIImage(data: data ?? Data())
+
+                if selfStrong.imageOne.image == nil {
+                    selfStrong.labelTwo.text = v.title
+                    selfStrong.imageTwo.image = ima
+                }
+                selfStrong.labelOne.text = v.title
+                selfStrong.imageOne.image = ima
+            }
+        }
+    }
 }
