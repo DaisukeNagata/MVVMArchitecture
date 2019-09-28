@@ -12,7 +12,7 @@ protocol Observer {
       func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ())
 }
 
-class ViewModel: Observer {
+final class ViewModel: Observer {
 
     var model : Observable<Model> = Observable()
     

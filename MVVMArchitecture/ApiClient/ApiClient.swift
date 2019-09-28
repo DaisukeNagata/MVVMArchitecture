@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - ApiClient
-class ApiClient {
+final class ApiClient {
     class func request(url: URL,data: Data? = nil, httpMethod: String? = nil , completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod

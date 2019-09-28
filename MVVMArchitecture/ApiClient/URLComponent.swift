@@ -7,7 +7,7 @@
 //
 import Foundation
 
-class URLComponent {
+final class URLComponent {
     static var exampleUrl = URL(string: "https://q9vn6ikx1m.execute-api.ap-northeast-1.amazonaws.com/dev/resource")!
 }
 
