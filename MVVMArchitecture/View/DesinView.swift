@@ -9,7 +9,7 @@
 import UIKit
 
 final class DesinView: UIView {
-    
+
     let vm = ViewModel()
     let labelOne = UILabel()
     let labelTwo = UILabel()
@@ -17,8 +17,9 @@ final class DesinView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-         desgin()
+    
+        desgin()
+        observe()
     }
     
     required init?(coder: NSCoder) {
@@ -38,5 +39,14 @@ final class DesinView: UIView {
         labelOne.backgroundColor = .red
         labelTwo.backgroundColor = .blue
         bt.backgroundColor = .yellow
+    }
+
+    private func observe(){
+        vm.observe(for: vm.model) {
+            [weak self ](value) in
+            guard let selfStrong = self else { return }
+            selfStrong.labelOne.text = value.one
+            selfStrong.labelTwo.text = value.two
+        }
     }
 }
