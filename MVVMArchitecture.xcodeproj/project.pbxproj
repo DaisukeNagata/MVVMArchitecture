@@ -13,10 +13,14 @@
 		BB053A34233EFA9100577489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB053A32233EFA9100577489 /* Main.storyboard */; };
 		BB053A36233EFA9200577489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB053A35233EFA9200577489 /* Assets.xcassets */; };
 		BB053A39233EFA9200577489 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB053A37233EFA9200577489 /* LaunchScreen.storyboard */; };
+		BB053A42233EFAE000577489 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A41233EFAE000577489 /* Observer.swift */; };
+		BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A43233EFBFA00577489 /* ViewModel.swift */; };
+		BB053A48233F1FB800577489 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A47233F1FB800577489 /* Model.swift */; };
+		BB053A4B233F200800577489 /* DesinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A4A233F200800577489 /* DesinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB053A29233EFA9100577489 /* SampleMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB053A29233EFA9100577489 /* MVVMArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB053A2C233EFA9100577489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB053A2E233EFA9100577489 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BB053A30233EFA9100577489 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		BB053A35233EFA9200577489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB053A38233EFA9200577489 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB053A3A233EFA9200577489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB053A41233EFAE000577489 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		BB053A43233EFBFA00577489 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		BB053A47233F1FB800577489 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BB053A4A233F200800577489 /* DesinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +48,7 @@
 		BB053A20233EFA9100577489 = {
 			isa = PBXGroup;
 			children = (
-				BB053A2B233EFA9100577489 /* SampleMVVM */,
+				BB053A2B233EFA9100577489 /* MVVMArchitecture */,
 				BB053A2A233EFA9100577489 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,14 +56,18 @@
 		BB053A2A233EFA9100577489 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB053A29233EFA9100577489 /* SampleMVVM.app */,
+				BB053A29233EFA9100577489 /* MVVMArchitecture.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB053A2B233EFA9100577489 /* SampleMVVM */ = {
+		BB053A2B233EFA9100577489 /* MVVMArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				BB053A49233F1FED00577489 /* View */,
+				BB053A46233F1FAC00577489 /* Model */,
+				BB053A45233F1F9600577489 /* ViewModel */,
+				BB053A40233EFAB100577489 /* Binding */,
 				BB053A2C233EFA9100577489 /* AppDelegate.swift */,
 				BB053A2E233EFA9100577489 /* SceneDelegate.swift */,
 				BB053A30233EFA9100577489 /* ViewController.swift */,
@@ -64,15 +76,47 @@
 				BB053A37233EFA9200577489 /* LaunchScreen.storyboard */,
 				BB053A3A233EFA9200577489 /* Info.plist */,
 			);
-			path = SampleMVVM;
+			path = MVVMArchitecture;
+			sourceTree = "<group>";
+		};
+		BB053A40233EFAB100577489 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				BB053A41233EFAE000577489 /* Observer.swift */,
+			);
+			path = Binding;
+			sourceTree = "<group>";
+		};
+		BB053A45233F1F9600577489 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB053A43233EFBFA00577489 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB053A46233F1FAC00577489 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB053A47233F1FB800577489 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB053A49233F1FED00577489 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB053A4A233F200800577489 /* DesinView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB053A28233EFA9100577489 /* SampleMVVM */ = {
+		BB053A28233EFA9100577489 /* MVVMArchitecture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB053A3D233EFA9200577489 /* Build configuration list for PBXNativeTarget "SampleMVVM" */;
+			buildConfigurationList = BB053A3D233EFA9200577489 /* Build configuration list for PBXNativeTarget "MVVMArchitecture" */;
 			buildPhases = (
 				BB053A25233EFA9100577489 /* Sources */,
 				BB053A26233EFA9100577489 /* Frameworks */,
@@ -82,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = SampleMVVM;
+			name = MVVMArchitecture;
 			productName = SampleMVVM;
-			productReference = BB053A29233EFA9100577489 /* SampleMVVM.app */;
+			productReference = BB053A29233EFA9100577489 /* MVVMArchitecture.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BB053A24233EFA9100577489 /* Build configuration list for PBXProject "SampleMVVM" */;
+			buildConfigurationList = BB053A24233EFA9100577489 /* Build configuration list for PBXProject "MVVMArchitecture" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB053A28233EFA9100577489 /* SampleMVVM */,
+				BB053A28233EFA9100577489 /* MVVMArchitecture */,
 			);
 		};
 /* End PBXProject section */
@@ -138,7 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */,
 				BB053A31233EFA9100577489 /* ViewController.swift in Sources */,
+				BB053A42233EFAE000577489 /* Observer.swift in Sources */,
+				BB053A48233F1FB800577489 /* Model.swift in Sources */,
+				BB053A4B233F200800577489 /* DesinView.swift in Sources */,
 				BB053A2D233EFA9100577489 /* AppDelegate.swift in Sources */,
 				BB053A2F233EFA9100577489 /* SceneDelegate.swift in Sources */,
 			);
@@ -286,13 +334,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3ZKJZUE9E;
-				INFOPLIST_FILE = SampleMVVM/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MVVMArchitecture/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SampleSwiftUI.SampleMVVM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MVVMArchitecture;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,13 +352,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3ZKJZUE9E;
-				INFOPLIST_FILE = SampleMVVM/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MVVMArchitecture/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SampleSwiftUI.SampleMVVM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MVVMArchitecture;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,7 +367,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB053A24233EFA9100577489 /* Build configuration list for PBXProject "SampleMVVM" */ = {
+		BB053A24233EFA9100577489 /* Build configuration list for PBXProject "MVVMArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB053A3B233EFA9200577489 /* Debug */,
@@ -328,7 +376,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB053A3D233EFA9200577489 /* Build configuration list for PBXNativeTarget "SampleMVVM" */ = {
+		BB053A3D233EFA9200577489 /* Build configuration list for PBXNativeTarget "MVVMArchitecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB053A3E233EFA9200577489 /* Debug */,

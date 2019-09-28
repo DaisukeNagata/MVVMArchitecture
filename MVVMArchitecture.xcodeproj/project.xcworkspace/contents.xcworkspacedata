@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SampleMVVM.xcodeproj">
+      location = "self:/Users/nagatadaisuke/SampleMVVM/MVVMArchitecture.xcodeproj">
    </FileRef>
 </Workspace>
