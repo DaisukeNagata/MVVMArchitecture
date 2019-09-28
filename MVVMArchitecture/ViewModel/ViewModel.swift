@@ -10,11 +10,14 @@ import UIKit
 
 final class ViewModel {
 
-    let model : Observable<Model> = Observable()
-    
+    var model : Observable<Model> = Observable()
+
     func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ()) {
         observable.bind { observable, value  in
             DispatchQueue.main.async {
+                // let o = observable as? Observable<Model>
+                // print(o?.value?.one)
+                // print(o?.value?.two)
                 with(value)
             }
         }
