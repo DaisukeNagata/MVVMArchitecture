@@ -14,14 +14,14 @@ final class DesinView: UIView {
     let labelOne = UILabel()
     let labelTwo = UILabel()
     let bt = UIButton()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-    
+
         desgin()
         observe()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
