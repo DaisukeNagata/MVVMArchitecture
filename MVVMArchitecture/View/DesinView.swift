@@ -12,15 +12,17 @@ class DesinView: UIView {
     
     let vm = ViewModel()
     let labelOne = UILabel()
+    let imageOne = UIImageView()
     let labelTwo = UILabel()
+    let imageTwo = UIImageView()
     let bt = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
          desgin()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,11 +30,17 @@ class DesinView: UIView {
     private func desgin() {
         self.frame = UIScreen.main.bounds
         labelOne.frame = CGRect(x: 0, y: 100, width: self.frame.width, height: 100)
+        imageOne.frame = CGRect(x: self.frame.width-100, y: 100, width: 100, height: 100)
         labelTwo.frame = CGRect(x: 0, y: 200, width: self.frame.width, height: 100)
+        imageTwo.frame = CGRect(x: self.frame.width-100, y: 200, width: 100, height: 100)
         bt.frame = CGRect(x: 0, y: 300, width: self.frame.width, height: 100)
 
-        labelOne.backgroundColor = .red
-        labelTwo.backgroundColor = .blue
         bt.backgroundColor = .yellow
+
+        self.addSubview(labelOne)
+        self.addSubview(imageOne)
+        self.addSubview(labelTwo)
+        self.addSubview(imageTwo)
+        self.addSubview(bt)
     }
 }

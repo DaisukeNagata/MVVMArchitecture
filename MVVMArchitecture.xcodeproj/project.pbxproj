@@ -17,6 +17,8 @@
 		BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A43233EFBFA00577489 /* ViewModel.swift */; };
 		BB053A48233F1FB800577489 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A47233F1FB800577489 /* Model.swift */; };
 		BB053A4B233F200800577489 /* DesinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A4A233F200800577489 /* DesinView.swift */; };
+		BBCB2786233F545A0030BD0A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB2785233F545A0030BD0A /* ApiClient.swift */; };
+		BBCB2788233F54D00030BD0A /* URLComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB2787233F54D00030BD0A /* URLComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		BB053A43233EFBFA00577489 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BB053A47233F1FB800577489 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BB053A4A233F200800577489 /* DesinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesinView.swift; sourceTree = "<group>"; };
+		BBCB2785233F545A0030BD0A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		BBCB2787233F54D00030BD0A /* URLComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		BB053A2B233EFA9100577489 /* MVVMArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				BBCB2784233F544B0030BD0A /* ApiClient */,
 				BB053A49233F1FED00577489 /* View */,
 				BB053A46233F1FAC00577489 /* Model */,
 				BB053A45233F1F9600577489 /* ViewModel */,
@@ -109,6 +114,15 @@
 				BB053A4A233F200800577489 /* DesinView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BBCB2784233F544B0030BD0A /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				BBCB2785233F545A0030BD0A /* ApiClient.swift */,
+				BBCB2787233F54D00030BD0A /* URLComponent.swift */,
+			);
+			path = ApiClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */,
+				BBCB2788233F54D00030BD0A /* URLComponent.swift in Sources */,
 				BB053A31233EFA9100577489 /* ViewController.swift in Sources */,
 				BB053A42233EFAE000577489 /* Observer.swift in Sources */,
+				BBCB2786233F545A0030BD0A /* ApiClient.swift in Sources */,
 				BB053A48233F1FB800577489 /* Model.swift in Sources */,
 				BB053A4B233F200800577489 /* DesinView.swift in Sources */,
 				BB053A2D233EFA9100577489 /* AppDelegate.swift in Sources */,
