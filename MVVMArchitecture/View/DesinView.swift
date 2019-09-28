@@ -15,6 +15,9 @@ final class DesinView: UIView {
     let labelTwo = UILabel()
     let bt = UIButton()
 
+    private let topHeight: CGFloat = UINavigationController.init().navigationBar.frame.height +
+        (UIWindow.init().windowScene?.statusBarManager?.statusBarFrame.height ?? UIApplication.shared.statusBarFrame.height) 
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -32,13 +35,25 @@ final class DesinView: UIView {
         self.addSubview(labelTwo)
         self.addSubview(bt)
 
-        labelOne.frame = CGRect(x: 0, y: 100, width: self.frame.width, height: 100)
-        labelTwo.frame = CGRect(x: 0, y: 200, width: self.frame.width, height: 100)
-        bt.frame = CGRect(x: 0, y: 300, width: self.frame.width, height: 100)
+        labelOne.translatesAutoresizingMaskIntoConstraints = false
+        labelTwo.translatesAutoresizingMaskIntoConstraints = false
+        bt.translatesAutoresizingMaskIntoConstraints = false
+
+        layoutAnchor(labelOne, constrait: self.topAnchor, height: topHeight)
+        layoutAnchor(labelTwo, constrait: labelOne.bottomAnchor)
+        layoutAnchor(bt, constrait: labelTwo.bottomAnchor)
 
         labelOne.backgroundColor = .red
         labelTwo.backgroundColor = .blue
         bt.backgroundColor = .yellow
+    }
+
+    private func layoutAnchor(_ v: UIView, constrait: NSLayoutYAxisAnchor, height: CGFloat? = nil) {
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        v.topAnchor.constraint(equalTo    : constrait, constant: height ?? 0).isActive = true
+        v.widthAnchor.constraint(equalTo  : self.widthAnchor, multiplier: 1).isActive = true
+        v.heightAnchor.constraint(equalTo : self.heightAnchor, multiplier: 0.1).isActive = true
     }
 
     private func observe() {
