@@ -35,10 +35,6 @@ final class DesinView: UIView {
         self.addSubview(labelTwo)
         self.addSubview(bt)
 
-        labelOne.translatesAutoresizingMaskIntoConstraints = false
-        labelTwo.translatesAutoresizingMaskIntoConstraints = false
-        bt.translatesAutoresizingMaskIntoConstraints = false
-
         layoutAnchor(labelOne, constrait: self.topAnchor, height: topHeight)
         layoutAnchor(labelTwo, constrait: labelOne.bottomAnchor)
         layoutAnchor(bt, constrait: labelTwo.bottomAnchor)
