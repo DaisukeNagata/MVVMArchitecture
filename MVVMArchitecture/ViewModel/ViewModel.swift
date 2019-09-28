@@ -20,8 +20,8 @@ class ViewModel {
         }
     }
 
-    func valueSet(_ one: String, two: String) {
+    func valueSet(_ md: Model) {
         // decode or init
-        model.value = Model(one: one, two: two)
+        model.value = md
     }
 }
