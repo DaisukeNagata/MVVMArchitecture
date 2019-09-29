@@ -40,13 +40,35 @@ final class DesinView: UIView {
         self.addSubview(imageTwo)
         self.addSubview(bt)
 
-        layoutAnchor(labelOne, xAxisAnchor: self.centerXAnchor, constantY: self.topAnchor, widthmultiplier: 1, heightmultiplier: 0.1, height: topHeight)
-        layoutAnchor(imageOne, xAxisAnchor: labelOne.centerXAnchor, constantX: self.frame.width/2 - self.frame.width/9.96, constantY: self.topAnchor, widthmultiplier: 0.2, heightmultiplier: 0.1, height: topHeight)
+        layoutAnchor(labelOne, xAxisAnchor       : self.centerXAnchor,
+                                 constantY       : self.topAnchor,
+                                 widthmultiplier : 1,
+                                 heightmultiplier: 0.1,
+                                 height          : topHeight)
+        layoutAnchor(imageOne,
+                     xAxisAnchor       : labelOne.centerXAnchor,
+                       constantX       : self.frame.width/2 - self.frame.width/9.96,
+                       constantY       : self.topAnchor,
+                       widthmultiplier : 0.2,
+                       heightmultiplier: 0.1, height: topHeight)
 
-        layoutAnchor(labelTwo, xAxisAnchor: self.centerXAnchor, constantY: labelOne.bottomAnchor, widthmultiplier: 1, heightmultiplier: 0.1)
-        layoutAnchor(imageTwo, xAxisAnchor: imageOne.centerXAnchor, constantY: labelOne.bottomAnchor, widthmultiplier: 0.2, heightmultiplier: 0.1)
+        layoutAnchor(labelTwo,
+                     xAxisAnchor     : self.centerXAnchor,
+                     constantY       : labelOne.bottomAnchor,
+                     widthmultiplier : 1,
+                     heightmultiplier: 0.1)
+    
+        layoutAnchor(imageTwo,
+                     xAxisAnchor     : imageOne.centerXAnchor,
+                     constantY       : labelOne.bottomAnchor,
+                     widthmultiplier : 0.2,
+                     heightmultiplier: 0.1)
 
-        layoutAnchor(bt, xAxisAnchor: self.centerXAnchor, constantY: labelTwo.bottomAnchor, widthmultiplier: 1, heightmultiplier: 0.1)
+        layoutAnchor(bt,
+                     xAxisAnchor     : self.centerXAnchor,
+                     constantY       : labelTwo.bottomAnchor,
+                     widthmultiplier : 1,
+                     heightmultiplier: 0.1)
 
         labelOne.backgroundColor = .red
         labelTwo.backgroundColor = .blue
