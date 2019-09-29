@@ -10,12 +10,12 @@ import UIKit
 
 final class DesinView: UIView {
 
-    let vm = ViewModel()
+    let vm       = ViewModel()
     let labelOne = UILabel()
     let imageOne = UIImageView()
     let labelTwo = UILabel()
     let imageTwo = UIImageView()
-    let bt = UIButton()
+    let bt       = UIButton()
 
     private let topHeight: CGFloat = UINavigationController.init().navigationBar.frame.height +
     (UIWindow.init().windowScene?.statusBarManager?.statusBarFrame.height ?? UIApplication.shared.statusBarFrame.height)
@@ -88,7 +88,7 @@ final class DesinView: UIView {
              v.widthAnchor.constraint(equalTo  : self.widthAnchor, multiplier: widthmultiplier ?? 0).isActive = true
              v.heightAnchor.constraint(equalTo : self.heightAnchor, multiplier: heightmultiplier ?? 0).isActive = true
          }
-    
+
     private func observe() {
         vm.observe(for: vm.model) {
             [weak self ](value) in
