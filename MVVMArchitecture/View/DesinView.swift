@@ -35,42 +35,34 @@ final class DesinView: UIView {
         self.addSubview(labelTwo)
         self.addSubview(bt)
 
-        layoutAnchor(labelOne,
+        LayoutAnchor().layoutAnchor(labelOne,
                      xAxisAnchor     : self.centerXAnchor,
                      constantY       : self.topAnchor,
+                     height          : topHeight,
                      widthmultiplier : 1,
                      heightmultiplier: 0.1,
-                     height          : topHeight)
+                     widthAnchor     : self.widthAnchor,
+                     heightAnchor    : self.heightAnchor)
 
-        layoutAnchor(labelTwo,
+        LayoutAnchor().layoutAnchor(labelTwo,
                      xAxisAnchor     : self.centerXAnchor,
                      constantY       : labelOne.bottomAnchor,
                      widthmultiplier : 1,
-                     heightmultiplier: 0.1)
+                     heightmultiplier: 0.1,
+                     widthAnchor     : self.widthAnchor,
+                     heightAnchor    : self.heightAnchor)
 
-        layoutAnchor(bt,
+        LayoutAnchor().layoutAnchor(bt,
                      xAxisAnchor     : self.centerXAnchor,
                      constantY       : labelTwo.bottomAnchor,
                      widthmultiplier : 1,
-                     heightmultiplier: 0.1)
+                     heightmultiplier: 0.1,
+                     widthAnchor     : self.widthAnchor,
+                     heightAnchor    : self.heightAnchor)
 
         labelOne.backgroundColor = .red
         labelTwo.backgroundColor = .blue
         bt.backgroundColor = .yellow
-    }
-
-    private func layoutAnchor(_ v        : UIView,
-                         xAxisAnchor     : NSLayoutXAxisAnchor,
-                         constantX       : CGFloat? = nil,
-                         constantY       : NSLayoutYAxisAnchor,
-                         widthmultiplier : CGFloat? = nil,
-                         heightmultiplier: CGFloat? = nil,
-                         height          : CGFloat? = nil) {
-        v.translatesAutoresizingMaskIntoConstraints = false
-        v.centerXAnchor.constraint(equalTo: xAxisAnchor, constant: constantX ?? 0).isActive = true
-        v.topAnchor.constraint(equalTo    : constantY, constant: height ?? 0).isActive = true
-        v.widthAnchor.constraint(equalTo  : self.widthAnchor, multiplier: widthmultiplier ?? 0).isActive = true
-        v.heightAnchor.constraint(equalTo : self.heightAnchor, multiplier: heightmultiplier ?? 0).isActive = true
     }
 
     private func observe() {
