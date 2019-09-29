@@ -17,6 +17,7 @@
 		BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A43233EFBFA00577489 /* ViewModel.swift */; };
 		BB053A48233F1FB800577489 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A47233F1FB800577489 /* Model.swift */; };
 		BB053A4B233F200800577489 /* DesinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A4A233F200800577489 /* DesinView.swift */; };
+		BB937B782341357300490731 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB937B772341357300490731 /* LayoutAnchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BB053A43233EFBFA00577489 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BB053A47233F1FB800577489 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BB053A4A233F200800577489 /* DesinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesinView.swift; sourceTree = "<group>"; };
+		BB937B772341357300490731 /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		BB053A2B233EFA9100577489 /* MVVMArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				BB937B762341355200490731 /* Layout */,
 				BB053A49233F1FED00577489 /* View */,
 				BB053A46233F1FAC00577489 /* Model */,
 				BB053A45233F1F9600577489 /* ViewModel */,
@@ -109,6 +112,14 @@
 				BB053A4A233F200800577489 /* DesinView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BB937B762341355200490731 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				BB937B772341357300490731 /* LayoutAnchor.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				BB053A48233F1FB800577489 /* Model.swift in Sources */,
 				BB053A4B233F200800577489 /* DesinView.swift in Sources */,
 				BB053A2D233EFA9100577489 /* AppDelegate.swift in Sources */,
+				BB937B782341357300490731 /* LayoutAnchor.swift in Sources */,
 				BB053A2F233EFA9100577489 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
