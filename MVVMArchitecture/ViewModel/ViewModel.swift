@@ -8,11 +8,13 @@
 
 import UIKit
 
-protocol Observer {
+protocol NetWorkAndBind {
+      func networkIsReady()
       func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ())
+      func request<J>(from url: URL, _ completion: @escaping (Result<J, Error>) -> Void)
 }
 
-final class ViewModel: Observer {
+final class ViewModel: NetWorkAndBind {
 
     var model : Observable<Model> = Observable()
     
@@ -33,19 +35,13 @@ final class ViewModel: Observer {
             switch result {
             case .success(let s):
                 self.valueSet(s)
-                break
             case.failure(let f):
                 print(f)
             }
         })
     }
 
-    private func valueSet(_ model: Model) {
-        // decord or init
-        self.model.value = model
-    }
-    
-    private func request<J>(from url: URL, _ completion: @escaping (Result<J, Error>) -> Void) {
+    func request<J>(from url: URL, _ completion: @escaping (Result<J, Error>) -> Void) {
         ApiClient.request(url: url, httpMethod: "GET", completion:{ data, res, error in
             do{
                 if let data = data {
@@ -58,4 +54,6 @@ final class ViewModel: Observer {
             }
         })
     }
+
+    private func valueSet(_ model: Model) { self.model.value = model } // decord or init
 }
