@@ -40,11 +40,13 @@ final class DesinView: UIView {
         self.addSubview(imageTwo)
         self.addSubview(bt)
 
-        layoutAnchor(labelOne, xAxisAnchor       : self.centerXAnchor,
-                                 constantY       : self.topAnchor,
-                                 widthmultiplier : 1,
-                                 heightmultiplier: 0.1,
-                                 height          : topHeight)
+        layoutAnchor(labelOne,
+                     xAxisAnchor     : self.centerXAnchor,
+                     constantY       : self.topAnchor,
+                     widthmultiplier : 1,
+                     heightmultiplier: 0.1,
+                     height          : topHeight)
+
         layoutAnchor(imageOne,
                      xAxisAnchor       : labelOne.centerXAnchor,
                        constantX       : self.frame.width/2 - self.frame.width/9.96,
@@ -57,7 +59,7 @@ final class DesinView: UIView {
                      constantY       : labelOne.bottomAnchor,
                      widthmultiplier : 1,
                      heightmultiplier: 0.1)
-    
+
         layoutAnchor(imageTwo,
                      xAxisAnchor     : imageOne.centerXAnchor,
                      constantY       : labelOne.bottomAnchor,
