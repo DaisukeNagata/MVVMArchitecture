@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol NetWorkAndBind {
-      func networkIsReady()
-      func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ())
-      func request<J>(from url: URL, _ completion: @escaping (Result<J, Error>) -> Void)
-}
-
 final class ViewModel: NetWorkAndBind {
 
     var model : Observable<Model> = Observable()
