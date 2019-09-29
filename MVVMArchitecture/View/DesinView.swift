@@ -35,21 +35,42 @@ final class DesinView: UIView {
         self.addSubview(labelTwo)
         self.addSubview(bt)
 
-        layoutAnchor(labelOne, constrait: self.topAnchor, height: topHeight)
-        layoutAnchor(labelTwo, constrait: labelOne.bottomAnchor)
-        layoutAnchor(bt, constrait: labelTwo.bottomAnchor)
+        layoutAnchor(labelOne,
+                     xAxisAnchor     : self.centerXAnchor,
+                     constantY       : self.topAnchor,
+                     widthmultiplier : 1,
+                     heightmultiplier: 0.1,
+                     height          : topHeight)
+
+        layoutAnchor(labelTwo,
+                     xAxisAnchor     : self.centerXAnchor,
+                     constantY       : labelOne.bottomAnchor,
+                     widthmultiplier : 1,
+                     heightmultiplier: 0.1)
+
+        layoutAnchor(bt,
+                     xAxisAnchor     : self.centerXAnchor,
+                     constantY       : labelTwo.bottomAnchor,
+                     widthmultiplier : 1,
+                     heightmultiplier: 0.1)
 
         labelOne.backgroundColor = .red
         labelTwo.backgroundColor = .blue
         bt.backgroundColor = .yellow
     }
 
-    private func layoutAnchor(_ v: UIView, constrait: NSLayoutYAxisAnchor, height: CGFloat? = nil) {
+    private func layoutAnchor(_ v        : UIView,
+                         xAxisAnchor     : NSLayoutXAxisAnchor,
+                         constantX       : CGFloat? = nil,
+                         constantY       : NSLayoutYAxisAnchor,
+                         widthmultiplier : CGFloat? = nil,
+                         heightmultiplier: CGFloat? = nil,
+                         height          : CGFloat? = nil) {
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        v.topAnchor.constraint(equalTo    : constrait, constant: height ?? 0).isActive = true
-        v.widthAnchor.constraint(equalTo  : self.widthAnchor, multiplier: 1).isActive = true
-        v.heightAnchor.constraint(equalTo : self.heightAnchor, multiplier: 0.1).isActive = true
+        v.centerXAnchor.constraint(equalTo: xAxisAnchor, constant: constantX ?? 0).isActive = true
+        v.topAnchor.constraint(equalTo    : constantY, constant: height ?? 0).isActive = true
+        v.widthAnchor.constraint(equalTo  : self.widthAnchor, multiplier: widthmultiplier ?? 0).isActive = true
+        v.heightAnchor.constraint(equalTo : self.heightAnchor, multiplier: heightmultiplier ?? 0).isActive = true
     }
 
     private func observe() {
