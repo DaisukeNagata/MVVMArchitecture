@@ -9,7 +9,7 @@
 import UIKit
 
 final class LayoutAnchor {
-    func layoutAnchor(_ v        : UIView,
+    func layoutAnchor(_ v                : UIView,
                          xAxisAnchor     : NSLayoutXAxisAnchor,
                          constantX       : CGFloat? = nil,
                          constantY       : NSLayoutYAxisAnchor,
