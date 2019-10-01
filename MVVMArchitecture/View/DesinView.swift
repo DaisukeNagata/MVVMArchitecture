@@ -10,7 +10,6 @@ import UIKit
 
 final class DesinView: UIView {
 
-    let api      = APIModel()
     let vm       = ViewModel()
     let labelOne = UILabel()
     let imageOne = UIImageView()
@@ -90,7 +89,7 @@ final class DesinView: UIView {
     }
 
     private func observe() {
-        vm.observe(for: api.model) {
+        vm.observe(for: vm.api?.model ?? Observable()) {
             [weak self ](value) in
             guard let selfStrong = self else { return }
             _ = value.body.map { v in

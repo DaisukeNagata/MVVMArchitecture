@@ -9,6 +9,17 @@
 import UIKit
 
 final class ViewModel {
+
+    var api: APIModel? = nil
+
+    init() {
+         api = APIModel()
+    }
+
+    func conect() {
+        api?.networkIsReady()
+    }
+
     func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ()) {
         observable.bind { observable, value  in
             DispatchQueue.main.async {

@@ -19,5 +19,5 @@ final class ViewController: UIViewController {
         view.addSubview(views)
     }
 
-    @objc func btAction() { views.api.networkIsReady() }
+    @objc func btAction() { views.vm.conect() }
 }
