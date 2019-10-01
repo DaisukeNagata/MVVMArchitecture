@@ -10,7 +10,15 @@ import UIKit
 
 final class ViewModel {
 
-    var model : Observable<Model> = Observable()
+    var api: APIModel? = nil
+
+    init() {
+        api = APIModel()
+    }
+
+    func conect() {
+        api?.networkIsReady()
+    }
 
     func observe<T>(for observable: Observable<T>, with: @escaping (T) -> ()) {
         observable.bind { observable, value  in
@@ -21,10 +29,5 @@ final class ViewModel {
                 with(value)
             }
         }
-    }
-
-    func valueSet(_ md: Model) {
-        // decode or init
-        model.value = md
     }
 }

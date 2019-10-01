@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    let views = DesinView()
+    let views = DesinView(vm: ViewModel(),labelOne: UILabel(), imageOne: UIImageView(), labelTwo: UILabel(), imageTwo: UIImageView(), bt: UIButton())
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +19,5 @@ class ViewController: UIViewController {
         view.addSubview(views)
     }
 
-    @objc func btAction() {
-        guard views.vm.model.value?.one == "123" else { return views.vm.valueSet(Model.init(one: "123", two: "456")) }
-        views.vm.valueSet(Model.init(one: "456", two: "123"))
-    }
+    @objc func btAction() { views.vm.conect() }
 }
