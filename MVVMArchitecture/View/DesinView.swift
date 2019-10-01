@@ -21,7 +21,7 @@ final class DesinView: UIView {
     (UIWindow.init().windowScene?.statusBarManager?.statusBarFrame.height ?? UIApplication.shared.statusBarFrame.height)
 
     init(vm: ViewModel, labelOne: UILabel, imageOne: UIImageView, labelTwo: UILabel, imageTwo: UIImageView, bt: UIButton) {
-        self.vm = vm
+        self.vm       = vm
         self.labelOne = labelOne
         self.imageOne = imageOne
         self.labelTwo = labelTwo
