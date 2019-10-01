@@ -13,7 +13,7 @@ final class ViewModel {
     var api: APIModel? = nil
 
     init() {
-         api = APIModel()
+        api = APIModel()
     }
 
     func conect() {
