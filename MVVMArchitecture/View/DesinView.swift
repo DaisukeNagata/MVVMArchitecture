@@ -10,26 +10,30 @@ import UIKit
 
 final class DesinView: UIView {
 
-    let vm       = ViewModel()
-    let labelOne = UILabel()
-    let imageOne = UIImageView()
-    let labelTwo = UILabel()
-    let imageTwo = UIImageView()
-    let bt       = UIButton()
+    let vm      : ViewModel
+    let labelOne: UILabel
+    let imageOne: UIImageView
+    let labelTwo: UILabel
+    let imageTwo: UIImageView
+    let bt      : UIButton
 
     private let topHeight: CGFloat = UINavigationController.init().navigationBar.frame.height +
     (UIWindow.init().windowScene?.statusBarManager?.statusBarFrame.height ?? UIApplication.shared.statusBarFrame.height)
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-         desgin()
-         observe()
+    init(vm: ViewModel, labelOne: UILabel, imageOne: UIImageView, labelTwo: UILabel, imageTwo: UIImageView, bt: UIButton) {
+        self.vm = vm
+        self.labelOne = labelOne
+        self.imageOne = imageOne
+        self.labelTwo = labelTwo
+        self.imageTwo = imageTwo
+        self.bt       = bt
+        super.init(frame:.zero)
+        
+        desgin()
+        observe()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     private func desgin() {
         self.frame = UIScreen.main.bounds

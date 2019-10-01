@@ -10,7 +10,7 @@ import UIKit
 
 final class ViewController: UIViewController {
 
-    let views = DesinView()
+    let views = DesinView(vm: ViewModel(),labelOne: UILabel(), imageOne: UIImageView(), labelTwo: UILabel(), imageTwo: UIImageView(), bt: UIButton())
 
     override func viewDidLoad() {
         super.viewDidLoad()
