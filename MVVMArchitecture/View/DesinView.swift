@@ -28,7 +28,7 @@ final class DesinView: UIView {
         self.imageTwo = imageTwo
         self.bt       = bt
         super.init(frame:.zero)
-        
+    
         desgin()
         observe()
     }
