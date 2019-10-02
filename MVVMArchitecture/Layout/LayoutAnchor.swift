@@ -10,17 +10,17 @@ import UIKit
 
 final class LayoutAnchor {
     func layoutAnchor(_ v                : UIView,
-                         xAxisAnchor     : NSLayoutXAxisAnchor,
+                         xAnchor         : NSLayoutXAxisAnchor,
                          constantX       : CGFloat? = nil,
-                         constantY       : NSLayoutYAxisAnchor,
-                         height          : CGFloat? = nil,
+                         yAnchor         : NSLayoutYAxisAnchor,
+                         constantY       : CGFloat? = nil,
                          widthmultiplier : CGFloat? = nil,
                          heightmultiplier: CGFloat? = nil,
                          widthAnchor     : NSLayoutDimension,
                          heightAnchor    : NSLayoutDimension) {
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.centerXAnchor.constraint(equalTo: xAxisAnchor, constant: constantX ?? 0).isActive = true
-        v.topAnchor.constraint(equalTo    : constantY, constant: height ?? 0).isActive = true
+        v.centerXAnchor.constraint(equalTo: xAnchor, constant: constantX ?? 0).isActive = true
+        v.topAnchor.constraint(equalTo    : yAnchor, constant: constantY ?? 0).isActive = true
         v.widthAnchor.constraint(equalTo  : widthAnchor, multiplier: widthmultiplier ?? 0).isActive = true
         v.heightAnchor.constraint(equalTo : heightAnchor, multiplier: heightmultiplier ?? 0).isActive = true
     }
