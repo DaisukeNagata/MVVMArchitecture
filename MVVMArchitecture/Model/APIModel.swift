@@ -9,7 +9,7 @@
 import Foundation
 
 class APIModel: NetWorkAndBind {
-    
+
     var model : Observable<Model> = Observable()
 
     func networkIsReady() {
