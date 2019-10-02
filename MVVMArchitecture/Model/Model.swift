@@ -9,12 +9,12 @@ import Foundation
 
 struct Model: Codable {
 
-   let body: [Nested]
+    var body: [Nested]
 
       struct Nested: Codable {
 
-          let url: URL
-          let title: String
+        var url: URL
+        var title: String
 
       }
 }
