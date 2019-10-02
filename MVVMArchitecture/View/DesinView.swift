@@ -96,9 +96,7 @@ final class DesinView: UIView {
         vm.observe(for: vm.api?.model ?? Observable()) {
             [weak self ](value) in
             guard let selfStrong = self else { return }
-            let d = value.body.reversed()
-            _ = d.map { v in
-
+            _ = value.body.map { v in
                 let data = try? Data(contentsOf: v.url)
                 let ima = UIImage(data: data ?? Data())
 
