@@ -44,47 +44,48 @@ final class DesinView: UIView {
         self.addSubview(bt)
 
         LayoutAnchor().layoutAnchor(labelOne,
-                     xAxisAnchor     : self.centerXAnchor,
-                     constantY       : self.topAnchor,
-                     height          : topHeight,
-                     widthmultiplier : 1,
-                     heightmultiplier: 0.1,
-                     widthAnchor     : self.widthAnchor,
-                     heightAnchor    : self.heightAnchor)
+                                    xAnchor         : self.centerXAnchor,
+                                    yAnchor         : self.topAnchor,
+                                    constantY       : topHeight,
+                                    widthmultiplier : 1,
+                                    heightmultiplier: 0.1,
+                                    widthAnchor     : self.widthAnchor,
+                                    heightAnchor    : self.heightAnchor)
 
         LayoutAnchor().layoutAnchor(imageOne,
-                     xAxisAnchor       : labelOne.centerXAnchor,
-                       constantX       : self.frame.width/2 - self.frame.width/9.96,
-                       constantY       : self.topAnchor,
-                       height          : topHeight,
-                       widthmultiplier : 0.2,
-                       heightmultiplier: 0.1,
-                       widthAnchor     : self.widthAnchor,
-                       heightAnchor    : self.heightAnchor)
+                                    xAnchor         : self.centerXAnchor,
+                                    constantX       : self.frame.width/2 - self.frame.width/9.96,
+                                    yAnchor         : self.topAnchor,
+                                    constantY       : topHeight,
+                                    widthmultiplier : 0.2,
+                                    heightmultiplier: 0.1,
+                                    widthAnchor     : self.widthAnchor,
+                                    heightAnchor    : self.heightAnchor)
 
         LayoutAnchor().layoutAnchor(labelTwo,
-                     xAxisAnchor     : self.centerXAnchor,
-                     constantY       : labelOne.bottomAnchor,
-                     widthmultiplier : 1,
-                     heightmultiplier: 0.1,
-                     widthAnchor     : self.widthAnchor,
-                     heightAnchor    : self.heightAnchor)
-
+                                    xAnchor         : self.centerXAnchor,
+                                    yAnchor         : labelOne.bottomAnchor,
+                                    widthmultiplier : 1,
+                                    heightmultiplier: 0.1,
+                                    widthAnchor     : self.widthAnchor,
+                                    heightAnchor    : self.heightAnchor)
+    
         LayoutAnchor().layoutAnchor(imageTwo,
-                     xAxisAnchor     : imageOne.centerXAnchor,
-                     constantY       : labelOne.bottomAnchor,
-                     widthmultiplier : 0.2,
-                     heightmultiplier: 0.1,
-                     widthAnchor     : self.widthAnchor,
-                     heightAnchor    : self.heightAnchor)
+                                    xAnchor         : self.centerXAnchor,
+                                    constantX       : self.frame.width/2 - self.frame.width/9.96,
+                                    yAnchor         : labelOne.bottomAnchor,
+                                    widthmultiplier : 0.2,
+                                    heightmultiplier: 0.1,
+                                    widthAnchor     : self.widthAnchor,
+                                    heightAnchor    : self.heightAnchor)
 
         LayoutAnchor().layoutAnchor(bt,
-                     xAxisAnchor     : self.centerXAnchor,
-                     constantY       : labelTwo.bottomAnchor,
-                     widthmultiplier : 1,
-                     heightmultiplier: 0.1,
-                     widthAnchor     : self.widthAnchor,
-                     heightAnchor    : self.heightAnchor)
+                                    xAnchor         : self.centerXAnchor,
+                                    yAnchor         : labelTwo.bottomAnchor,
+                                    widthmultiplier : 1,
+                                    heightmultiplier: 0.1,
+                                    widthAnchor     : self.widthAnchor,
+                                    heightAnchor    : self.heightAnchor)
 
         labelOne.backgroundColor = .red
         labelTwo.backgroundColor = .blue
@@ -95,7 +96,8 @@ final class DesinView: UIView {
         vm.observe(for: vm.api?.model ?? Observable()) {
             [weak self ](value) in
             guard let selfStrong = self else { return }
-            _ = value.body.map { v in
+            let d = value.body.reversed()
+            _ = d.map { v in
 
                 let data = try? Data(contentsOf: v.url)
                 let ima = UIImage(data: data ?? Data())
