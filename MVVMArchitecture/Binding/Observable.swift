@@ -1,5 +1,5 @@
 //
-//  Observer.swift
+//  Observable.swift
 //  SampleMVVM
 //
 //  Created by 永田大祐 on 2019/09/28.

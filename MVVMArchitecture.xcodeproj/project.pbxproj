@@ -13,7 +13,7 @@
 		BB053A34233EFA9100577489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB053A32233EFA9100577489 /* Main.storyboard */; };
 		BB053A36233EFA9200577489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB053A35233EFA9200577489 /* Assets.xcassets */; };
 		BB053A39233EFA9200577489 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB053A37233EFA9200577489 /* LaunchScreen.storyboard */; };
-		BB053A42233EFAE000577489 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A41233EFAE000577489 /* Observer.swift */; };
+		BB053A42233EFAE000577489 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A41233EFAE000577489 /* Observable.swift */; };
 		BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A43233EFBFA00577489 /* ViewModel.swift */; };
 		BB053A48233F1FB800577489 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A47233F1FB800577489 /* Model.swift */; };
 		BB053A4B233F200800577489 /* DesinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB053A4A233F200800577489 /* DesinView.swift */; };
@@ -33,7 +33,7 @@
 		BB053A35233EFA9200577489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB053A38233EFA9200577489 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB053A3A233EFA9200577489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB053A41233EFAE000577489 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		BB053A41233EFAE000577489 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		BB053A43233EFBFA00577489 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		BB053A47233F1FB800577489 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BB053A4A233F200800577489 /* DesinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesinView.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		BB053A40233EFAB100577489 /* Binding */ = {
 			isa = PBXGroup;
 			children = (
-				BB053A41233EFAE000577489 /* Observer.swift */,
+				BB053A41233EFAE000577489 /* Observable.swift */,
 			);
 			path = Binding;
 			sourceTree = "<group>";
@@ -226,13 +226,12 @@
 				BB053A31233EFA9100577489 /* ViewController.swift in Sources */,
 				BB937B7F23413B2F00490731 /* NetWorkAndBind.swift in Sources */,
 				BB937B812342528300490731 /* APIModel.swift in Sources */,
-				BB053A42233EFAE000577489 /* Observer.swift in Sources */,
+				BB053A42233EFAE000577489 /* Observable.swift in Sources */,
 				BB937B7C2341386D00490731 /* LayoutAnchor.swift in Sources */,
 				BBCB2786233F545A0030BD0A /* ApiClient.swift in Sources */,
 				BB053A48233F1FB800577489 /* Model.swift in Sources */,
 				BB053A4B233F200800577489 /* DesinView.swift in Sources */,
 				BB053A2D233EFA9100577489 /* AppDelegate.swift in Sources */,
-				BB937B782341357300490731 /* LayoutAnchor.swift in Sources */,
 				BB053A2F233EFA9100577489 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
