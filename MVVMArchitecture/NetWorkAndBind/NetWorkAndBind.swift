@@ -8,6 +8,6 @@
 import Foundation
 
 protocol NetWorkAndBind {
-      func networkIsReady()
-      func request<J>(from url: URL, _ completion: @escaping (Result<J, Error>) -> Void)
+      func networkIsReady<M>(completion: @escaping (_ model: M?) -> Void)
+      func request<M>(from url: URL, _ completion: @escaping (Result<M, Error>) -> Void)
 }

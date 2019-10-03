@@ -10,14 +10,12 @@ import Foundation
 
 class APIModel: NetWorkAndBind {
 
-    var model : Observable<Model> = Observable()
-
-    func networkIsReady() {
+    func networkIsReady<M>(completion: @escaping (_ model: M?) -> Void) {
            // example view set
-           request(from: URLComponent.exampleUrl, { (_ result: Result<Model, Error>) in
+           request(from: URLComponent.exampleUrl, { (_ result: Result<M, Error>) in
                switch result {
                case .success(let s):
-                   self.valueSet(s)
+                   completion(s)
                case.failure(let f):
                    print(f)
                }
@@ -37,5 +35,4 @@ class APIModel: NetWorkAndBind {
                }
            })
        }
-     private func valueSet(_ model: Model) { self.model.value = model } // decord or init
 }
