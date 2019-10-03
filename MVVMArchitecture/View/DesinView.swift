@@ -28,7 +28,7 @@ final class DesinView: UIView {
         self.imageTwo = imageTwo
         self.bt       = bt
         super.init(frame:.zero)
-    
+
         desgin()
         observe()
     }
@@ -69,7 +69,7 @@ final class DesinView: UIView {
                                     heightmultiplier: 0.1,
                                     widthAnchor     : self.widthAnchor,
                                     heightAnchor    : self.heightAnchor)
-    
+
         LayoutAnchor().layoutAnchor(imageTwo,
                                     xAnchor         : self.centerXAnchor,
                                     constantX       : self.frame.width/2 - self.frame.width/9.96,
