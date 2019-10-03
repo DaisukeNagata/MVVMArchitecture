@@ -14,8 +14,8 @@ final class ViewModel {
     var model : Observable<Model>?
 
     init() {
-        model = Observable()
         api = APIModel()
+        model = Observable()
     }
 
     func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet(_:)) }
