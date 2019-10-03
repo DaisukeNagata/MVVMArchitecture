@@ -10,9 +10,9 @@ import Foundation
 
 class APIModel: NetWorkAndBind {
 
-    func networkIsReady<M>(completion: @escaping (_ model: M?) -> Void) {
+    func networkIsReady<M>(_ url: URL,completion: @escaping (_ model: M?) -> Void) {
            // example view set
-           request(from: URLComponent.exampleUrl, { (_ result: Result<M, Error>) in
+           request(from: url, { (_ result: Result<M, Error>) in
                switch result {
                case .success(let s):
                    completion(s)

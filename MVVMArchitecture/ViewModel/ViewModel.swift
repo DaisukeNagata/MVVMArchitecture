@@ -18,7 +18,7 @@ final class ViewModel {
         api = APIModel()
     }
 
-    func conect() { api?.networkIsReady(completion: valueSet(_:)) }
+    func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet(_:)) }
 
     func valueSet(_ model: Model?) { self.model?.value = model } 
 
