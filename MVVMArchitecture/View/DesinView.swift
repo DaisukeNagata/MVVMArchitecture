@@ -31,6 +31,7 @@ final class DesinView: UIView {
 
         desgin()
         observe()
+        apiObserve()
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -92,7 +93,7 @@ final class DesinView: UIView {
         bt.backgroundColor = .yellow
     }
 
-    private func observe() {
+    private func apiObserve() {
         vm.observe(for: vm.model ?? Observable()) {
             [weak self ](value) in
             guard let selfStrong = self else { return }
@@ -107,6 +108,15 @@ final class DesinView: UIView {
                 selfStrong.labelOne.text = v.title
                 selfStrong.imageOne.image = ima
             }
+        }
+    }
+
+    private func observe() {
+        vm.observe(for: vm.modelPrimitive ?? Observable()) {
+            [weak self ](value) in
+            guard let selfStrong = self else { return }
+            selfStrong.labelOne.text = value.count?.description
+            selfStrong.labelTwo.text = value.count?.description
         }
     }
 }
