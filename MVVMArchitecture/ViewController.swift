@@ -11,13 +11,17 @@ import UIKit
 final class ViewController: UIViewController {
 
     let views = DesinView(vm: ViewModel(),labelOne: UILabel(), imageOne: UIImageView(), labelTwo: UILabel(), imageTwo: UIImageView(), bt: UIButton())
-
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
         views.bt.addTarget(self, action: #selector(btAction), for: .touchUpInside)
         view.addSubview(views)
+        views.vm.conect(URLComponent.exampleUrl)
     }
 
-    @objc func btAction() { views.vm.conect(URLComponent.exampleUrl) }
+    @objc func btAction() {
+        count += 1
+        views.vm.modelPrimitive?.value = Model2(count: count)
+    }
 }
