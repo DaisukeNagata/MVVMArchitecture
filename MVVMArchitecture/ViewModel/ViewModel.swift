@@ -10,12 +10,14 @@ import UIKit
 
 final class ViewModel {
 
-    var api   : APIModel? = nil
-    var model : Observable<Model>?
+    var api            : APIModel? = nil
+    var model          : Observable<Model>?
+    var modelPrimitive : Observable<Model2>?
 
     init() {
         api = APIModel()
         model = Observable()
+        modelPrimitive = Observable()
     }
 
     func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet(_:)) }
