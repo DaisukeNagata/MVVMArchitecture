@@ -18,3 +18,8 @@ struct Model: Codable {
 
       }
 }
+
+struct Model2 {
+    var count: Int? = nil
+    var title: String? = nil
+}
