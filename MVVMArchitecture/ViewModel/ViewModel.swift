@@ -12,7 +12,7 @@ class ViewModel {
 
     var api            : APIModel? = nil
     var model          : Observable<Model>?
-    var modelPrimitive : Observable<Value>?
+    var modelPrimitive : Observable<ModelPrimitive>?
 
     init() {
         api = APIModel()

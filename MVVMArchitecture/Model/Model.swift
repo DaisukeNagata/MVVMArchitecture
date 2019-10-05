@@ -19,7 +19,7 @@ struct Model: Codable {
       }
 }
 
-struct Model2 {
+struct ModelPrimitive {
     var count: Int? = nil
     var title: String? = nil
 }
