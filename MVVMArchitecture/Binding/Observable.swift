@@ -13,6 +13,7 @@ final class Observable<ObservedType> {
     typealias Observer = (_ observable: Observable<ObservedType>, ObservedType) -> Void
 
     private var observers: [Observer]?
+
     var value: ObservedType? {
         didSet {
             guard value.debugDescription.contains(oldValue.debugDescription) else {
@@ -29,7 +30,7 @@ final class Observable<ObservedType> {
 
     func bind(observer: @escaping Observer) { self.observers?.append(observer) }
 
-    func notifyObservers(_ value: ObservedType?) {
+    private func notifyObservers(_ value: ObservedType?) {
         self.observers?.forEach { [unowned self](observer) in
             observer(self, value!)
         }
