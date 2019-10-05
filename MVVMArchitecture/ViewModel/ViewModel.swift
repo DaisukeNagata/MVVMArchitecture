@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class ViewModel {
+class ViewModel {
 
     var api            : APIModel? = nil
     var model          : Observable<Model>?
-    var modelPrimitive : Observable<Model2>?
-
+    var modelPrimitive : Observable<Value>?
+    
     init() {
         api = APIModel()
         model = Observable()
@@ -25,7 +25,7 @@ final class ViewModel {
     func valueSet(_ model: Model?) { self.model?.value = model } 
 
     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> ()) {
-        observable.bind { observable, value  in
+        observable.bind { value  in
             DispatchQueue.main.async {
                 // let o = observable as? Observable<Model>
                 // print(o?.value?.one)
