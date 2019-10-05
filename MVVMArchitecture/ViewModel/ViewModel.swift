@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewModel {
+class ViewModel: Observer {
 
     var api            : APIModel? = nil
     var model          : Observable<Model>?
@@ -22,7 +22,7 @@ class ViewModel {
 
     func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet) }
 
-    func valueSet(_ model: Model) { self.model?.value = model }
+    func valueSet(_ model: Any) { self.model?.value = model as? Model }
 
     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> ()) {
         observable.bind { value  in with(value) }
