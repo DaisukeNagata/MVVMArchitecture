@@ -21,7 +21,7 @@ final class ViewController: UIViewController {
     }
 
     @objc func btAction() {
-        count += 1
         views.vm.modelPrimitive?.value = ModelPrimitive(count: count)
+        count += 1
     }
 }
