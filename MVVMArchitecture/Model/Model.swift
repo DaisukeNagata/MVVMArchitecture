@@ -19,7 +19,6 @@ struct Model: Codable {
       }
 }
 
-struct ModelPrimitive {
-    var count: Int? = nil
-    var title: String? = nil
+enum ModelPrimitive {
+    case count(String, String), title
 }

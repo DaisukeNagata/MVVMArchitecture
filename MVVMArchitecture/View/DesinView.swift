@@ -112,11 +112,15 @@ final class DesinView: UIView {
     }
 
     private func observe() {
-        vm.observe(for: vm.modelPrimitive ?? Observable()) {
-            [weak self ](value) in
-            guard let selfStrong = self else { return }
-            selfStrong.labelOne.text = value.count?.description
-            selfStrong.labelTwo.text = value.count?.description
+        vm.observe(for: vm.modelPrimitive ?? Observable()) { value in
+            switch value {
+            case .count(let d):
+                self.labelOne.text = d.0
+                self.labelTwo.text = d.1
+            case .title:
+                self.labelOne.text = "456"
+                self.labelTwo.text = "123"
+            }
         }
     }
 }

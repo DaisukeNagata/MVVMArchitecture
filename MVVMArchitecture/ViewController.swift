@@ -11,7 +11,7 @@ import UIKit
 final class ViewController: UIViewController {
 
     let views = DesinView(vm: ViewModel(),labelOne: UILabel(), imageOne: UIImageView(), labelTwo: UILabel(), imageTwo: UIImageView(), bt: UIButton())
-    var count = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +21,13 @@ final class ViewController: UIViewController {
     }
 
     @objc func btAction() {
-        views.vm.modelPrimitive?.value = ModelPrimitive(count: count)
-        count += 1
+        for _ in 0...10000 {
+            if views.vm.modelPrimitive?.value == nil {
+                views.vm.modelPrimitive?.value = ModelPrimitive.count("one", "two")
+            } else {
+                views.vm.modelPrimitive?.value = ModelPrimitive.title
+                views.vm.modelPrimitive?.value = nil
+            }
+        }
     }
 }
