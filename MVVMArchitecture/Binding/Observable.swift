@@ -16,10 +16,15 @@ final class Observable<ObservedType> {
     var bindValue: ObservedType?
     var value: ObservedType? {
         didSet {
-            if let value = value {
-                notifyObservers(value)
+            guard bindValue.debugDescription.contains(value.debugDescription) else {
+                bindValue = value
+                if let value = value {
+                    notifyObservers(value)
+                }
+                return
             }
         }
+            
     }
 
     init(_ value: ObservedType? = nil) {
@@ -30,12 +35,8 @@ final class Observable<ObservedType> {
     func bind(observer: @escaping Observer) { self.observers?.append(observer) }
 
     func notifyObservers(_ value: ObservedType?) {
-        guard bindValue.debugDescription.contains(value.debugDescription) else {
-            bindValue = value
-            self.observers?.forEach { [unowned self](observer) in
-                observer(self, value!)
-            }
-            return
+        self.observers?.forEach { [unowned self](observer) in
+            observer(self, value!)
         }
     }
 }
