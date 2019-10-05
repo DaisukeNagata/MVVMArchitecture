@@ -10,7 +10,7 @@ import Foundation
 
 final class Observable<ObservedType> {
 
-    typealias Observer = (_ observable: Observable<ObservedType>, ObservedType) -> Void
+    typealias Observer = (_ observable: ObservedType) -> Void
 
     private var observers: [Observer]?
 
@@ -30,9 +30,7 @@ final class Observable<ObservedType> {
 
     func bind(observer: @escaping Observer) { self.observers?.append(observer) }
 
-    private func notifyObservers(_ value: ObservedType?) {
-        self.observers?.forEach { [unowned self](observer) in
-            observer(self, value!)
-        }
+    private func notifyObservers(_ value: ObservedType) {
+        self.observers?.forEach { observer in observer(value) }
     }
 }
