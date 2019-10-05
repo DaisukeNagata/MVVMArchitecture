@@ -25,6 +25,6 @@ class ViewModel {
     func valueSet(_ model: Model?) { self.model?.value = model } 
 
     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> ()) {
-        observable.bind { value  in with(value) }
+        observable.bind { value in with(value) }
     }
 }
