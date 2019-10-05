@@ -20,11 +20,11 @@ class ViewModel {
         modelPrimitive = Observable()
     }
 
-    func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet(_:)) }
+    func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet) }
 
-    func valueSet(_ model: Model?) { self.model?.value = model } 
+    func valueSet(_ model: Model) { self.model?.value = model }
 
     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> ()) {
-        observable.bind { value in with(value) }
+        observable.bind { value  in with(value) }
     }
 }
