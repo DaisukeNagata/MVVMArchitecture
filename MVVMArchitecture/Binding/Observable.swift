@@ -13,11 +13,9 @@ final class Observable<ObservedType> {
     typealias Observer = (_ observable: Observable<ObservedType>, ObservedType) -> Void
 
     private var observers: [Observer]?
-    var bindValue: ObservedType?
     var value: ObservedType? {
         didSet {
-            guard bindValue.debugDescription.contains(value.debugDescription) else {
-                bindValue = value
+            guard value.debugDescription.contains(oldValue.debugDescription) else {
                 if let value = value { notifyObservers(value) }
                 return
             }
