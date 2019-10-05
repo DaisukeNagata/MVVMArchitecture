@@ -21,13 +21,11 @@ final class ViewController: UIViewController {
     }
 
     @objc func btAction() {
-        for _ in 0...10000 {
-            if views.vm.modelPrimitive?.value == nil {
-                views.vm.modelPrimitive?.value = ModelPrimitive.count("one", "two")
-            } else {
-                views.vm.modelPrimitive?.value = ModelPrimitive.title
-                views.vm.modelPrimitive?.value = nil
-            }
+        if views.vm.modelPrimitive?.value == nil {
+            views.vm.modelPrimitive?.value = ModelPrimitive.count("one", "two")
+        } else {
+            views.vm.modelPrimitive?.value = ModelPrimitive.title
+            views.vm.modelPrimitive?.value = nil
         }
     }
 }
