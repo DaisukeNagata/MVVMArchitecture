@@ -18,13 +18,10 @@ final class Observable<ObservedType> {
         didSet {
             guard bindValue.debugDescription.contains(value.debugDescription) else {
                 bindValue = value
-                if let value = value {
-                    notifyObservers(value)
-                }
+                if let value = value { notifyObservers(value) }
                 return
             }
         }
-            
     }
 
     init(_ value: ObservedType? = nil) {
