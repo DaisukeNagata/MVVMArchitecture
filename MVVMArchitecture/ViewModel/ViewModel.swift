@@ -6,7 +6,7 @@
 //  Copyright © 2019 永田大祐. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ViewModel: Observer {
 

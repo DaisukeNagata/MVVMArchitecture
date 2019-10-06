@@ -6,8 +6,6 @@
 //  Copyright © 2019 永田大祐. All rights reserved.
 //
 
-import Foundation
-
 final class Observable<ObservedType> {
 
     typealias Observer = (_ observable: ObservedType) -> Void
