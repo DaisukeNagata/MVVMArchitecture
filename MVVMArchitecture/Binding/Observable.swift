@@ -12,8 +12,6 @@ final class Observable<ObservedType> {
 
     typealias Observer = (_ observable: ObservedType) -> Void
 
-    private var observers: [Observer]?
-
     var value: ObservedType? {
         didSet {
             guard value.debugDescription.contains(oldValue.debugDescription) else {
@@ -23,16 +21,13 @@ final class Observable<ObservedType> {
         }
     }
 
-    init(_ value: ObservedType? = nil) {
-        self.value = value
-        observers = []
-    }
+    private var observers: [Observer] = []
 
-    func initProperty() { value = nil}
+    func initProperty() { value = nil }
 
     func observe(with: @escaping Observer) { bind(observer: with) }
 
-    private func bind(observer: @escaping Observer) { self.observers?.append(observer) }
+    private func bind(observer: @escaping Observer) { self.observers.append(observer) }
 
-    private func notifyObservers(_ value: ObservedType) { self.observers?.forEach { observer in observer(value) } }
+    private func notifyObservers(_ value: ObservedType) { self.observers.forEach { observer in observer(value) } }
 }
