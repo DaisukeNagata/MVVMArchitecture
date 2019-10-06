@@ -95,7 +95,7 @@ final class DesinView: UIView {
 
     private func apiObserve() {
         vm.observe(for: vm.model ?? Observable()) {
-            [weak self ](value) in
+            [weak self] value in
             guard let selfStrong = self else { return }
             _ = value.body.map { v in
                 let data = try? Data(contentsOf: v.url)
