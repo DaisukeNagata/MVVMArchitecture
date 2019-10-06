@@ -24,5 +24,5 @@ class ViewModel: Observer {
 
     func valueSet(_ model: Any) { self.model?.value = model as? Model }
 
-    func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void) { observable.observe(with: with) }
+    func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void) { observable.bind(observer: with) }
 }
