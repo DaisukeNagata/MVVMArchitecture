@@ -25,7 +25,7 @@ final class ViewController: UIViewController {
             views.vm.modelPrimitive?.value = ModelPrimitive.count("one", "two")
         } else {
             views.vm.modelPrimitive?.value = ModelPrimitive.title
-            views.vm.modelPrimitive?.initProperty()
+            views.vm.modelPrimitive?.value = nil
         }
     }
 }

@@ -21,8 +21,6 @@ final class Observable<ObservedType> {
 
     private var observers: [Observer] = []
 
-    func initProperty() { value = nil }
-
     func bind(observer: @escaping Observer) { self.observers.append(observer) }
 
     private func notifyObservers(_ value: ObservedType) { self.observers.forEach { observer in observer(value) } }
