@@ -7,6 +7,6 @@
 //
 
 protocol Observer {
-     func valueSet(_ model: Any)
-     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void)
+    func valueSet(_ model: ModelPrimitive)
+    func observe(for observable: Observable, with: @escaping (ModelPrimitive) -> Void)
 }

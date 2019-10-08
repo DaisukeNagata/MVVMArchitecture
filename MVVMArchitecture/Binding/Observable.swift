@@ -6,11 +6,9 @@
 //  Copyright © 2019 永田大祐. All rights reserved.
 //
 
-final class Observable<ObservedType> {
+final class Observable {
 
-    typealias Observer = (_ observable: ObservedType) -> Void
-
-    var value: ObservedType? {
+    var value: ModelPrimitive? {
         didSet {
             guard value.debugDescription.contains(oldValue.debugDescription) else {
                 if let value = value { notifyObservers(value) }
@@ -19,9 +17,14 @@ final class Observable<ObservedType> {
         }
     }
 
-    private var observers: [Observer] = []
+//    private var observers: ((String) -> Void)
+    var observers = {(_: ModelPrimitive) -> Void in }
+    
+    func bind(observer: @escaping (ModelPrimitive) -> Void) {
+        self.observers = observer
+    }
 
-    func bind(observer: @escaping Observer) { self.observers.append(observer) }
-
-    private func notifyObservers(_ value: ObservedType) { self.observers.forEach { observer in observer(value) } }
+    private func notifyObservers(_ value: ModelPrimitive) {
+        observers(value)
+    }
 }

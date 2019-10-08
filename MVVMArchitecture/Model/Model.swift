@@ -19,6 +19,9 @@ struct Model: Codable {
       }
 }
 
-enum ModelPrimitive {
-    case count(String, String), title
+class ModelPrimitive {
+    var dd  =  String()
+    func che() -> String {
+        return "11"
+    }
 }

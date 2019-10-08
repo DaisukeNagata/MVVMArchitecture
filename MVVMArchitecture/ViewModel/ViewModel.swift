@@ -11,18 +11,19 @@ import Foundation
 class ViewModel: Observer {
 
     var api            : APIModel? = nil
-    var model          : Observable<Model>?
-    var modelPrimitive : Observable<ModelPrimitive>?
+    var model          = Observable()
+    var modelPrimitive = Observable()
 
     init() {
         api = APIModel()
-        model = Observable()
-        modelPrimitive = Observable()
+
     }
 
     func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet) }
 
-    func valueSet(_ model: Any) { self.model?.value = model as? Model }
+    func valueSet(_ model: ModelPrimitive) { self.modelPrimitive.value = model }
 
-    func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void) { observable.bind(observer: with) }
+    func observe(for observable: Observable, with: @escaping (ModelPrimitive) -> Void) {
+        observable.bind(observer: with)
+    }
 }

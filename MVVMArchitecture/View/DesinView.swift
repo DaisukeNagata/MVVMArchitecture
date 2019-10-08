@@ -31,7 +31,7 @@ final class DesinView: UIView {
 
         desgin()
         observe()
-        apiObserve()
+//        apiObserve()
     }
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -94,33 +94,34 @@ final class DesinView: UIView {
     }
 
     private func apiObserve() {
-        vm.observe(for: vm.model ?? Observable()) {
+        vm.observe(for:  vm.modelPrimitive) {
             [weak self] value in
-            guard let selfStrong = self else { return }
-            _ = value.body.map { v in
-                let data = try? Data(contentsOf: v.url)
-                let ima = UIImage(data: data ?? Data())
-
-                if selfStrong.imageOne.image == nil {
-                    selfStrong.labelTwo.text = v.title
-                    selfStrong.imageTwo.image = ima
-                }
-                selfStrong.labelOne.text = v.title
-                selfStrong.imageOne.image = ima
-            }
+//            guard let selfStrong = self else { return }
+//            _ = value.body.map { v in
+//                let data = try? Data(contentsOf: v.url)
+//                let ima = UIImage(data: data ?? Data())
+//
+//                if selfStrong.imageOne.image == nil {
+//                    selfStrong.labelTwo.text = v.title
+//                    selfStrong.imageTwo.image = ima
+//                }
+//                selfStrong.labelOne.text = v.title
+//                selfStrong.imageOne.image = ima
+//            }
         }
     }
 
     private func observe() {
-        vm.observe(for: vm.modelPrimitive ?? Observable()) { value in
-            switch value {
-            case .count(let d):
-                self.labelOne.text = d.0
-                self.labelTwo.text = d.1
-            case .title:
-                self.labelOne.text = "456"
-                self.labelTwo.text = "123"
-            }
+        vm.observe(for: vm.modelPrimitive) { value in
+            print(value.dd)
+//            switch value {
+//            case .count(let d):
+//                self.labelOne.text = d.0
+//                self.labelTwo.text = d.1
+//            case .title:
+//                self.labelOne.text = "456"
+//                self.labelTwo.text = "123"
+//            }
         }
     }
 }
