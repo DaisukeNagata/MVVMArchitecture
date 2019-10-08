@@ -13,8 +13,7 @@ class ViewModel: Observer, APIConnect {
     var api            : APIModel? = nil
     var model          : Observable<Model>?
     var modelPrimitive : Observable<ModelPrimitive>?
-    var valueData      : Data?
-    var oldData        : Data?
+
     init() {
         api = APIModel()
         model = Observable()
@@ -25,14 +24,7 @@ class ViewModel: Observer, APIConnect {
 
     func valueSet(_ model: Any) { self.model?.value = model as? Model }
     
-    func titleSet(_ model: ModelPrimitive) {
-        valueData = (model as AnyObject).debugDescription.data(using: .utf8)
-        guard valueData == oldData else {
-            oldData = valueData
-            self.modelPrimitive?.value = model
-            return
-        }
-    }
+    func titleSet(_ model: ModelPrimitive) { self.modelPrimitive?.value = model }
 
     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void) { observable.bind(observer: with) }
 }

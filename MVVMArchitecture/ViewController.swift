@@ -22,8 +22,8 @@ final class ViewController: UIViewController {
     }
 
     @objc func btAction() {
-        if sample.one == "11"  {
-            sample.one = "11"
+        if sample.one == "11" {
+            sample.one = "1"
             sample.two = "22"
             views.vm.titleSet(sample)
         } else {
