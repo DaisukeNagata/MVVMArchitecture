@@ -7,6 +7,5 @@
 //
 
 protocol Observer {
-     func valueSet(_ model: Any)
      func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void)
 }

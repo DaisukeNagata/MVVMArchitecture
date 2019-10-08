@@ -20,6 +20,7 @@
 		BB937B7C2341386D00490731 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB937B7B2341386D00490731 /* LayoutAnchor.swift */; };
 		BB937B7F23413B2F00490731 /* NetWorkAndBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB937B7E23413B2F00490731 /* NetWorkAndBind.swift */; };
 		BB937B812342528300490731 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB937B802342528300490731 /* APIModel.swift */; };
+		BBC79229234CDF390075E45D /* APIConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC79228234CDF390075E45D /* APIConnect.swift */; };
 		BBCB2786233F545A0030BD0A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB2785233F545A0030BD0A /* ApiClient.swift */; };
 		BBCB2788233F54D00030BD0A /* URLComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB2787233F54D00030BD0A /* URLComponent.swift */; };
 		BBCB27B823489E1A0030BD0A /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB27B723489E1A0030BD0A /* Observer.swift */; };
@@ -41,6 +42,7 @@
 		BB937B7B2341386D00490731 /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
 		BB937B7E23413B2F00490731 /* NetWorkAndBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkAndBind.swift; sourceTree = "<group>"; };
 		BB937B802342528300490731 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		BBC79228234CDF390075E45D /* APIConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnect.swift; sourceTree = "<group>"; };
 		BBCB2785233F545A0030BD0A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		BBCB2787233F54D00030BD0A /* URLComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponent.swift; sourceTree = "<group>"; };
 		BBCB27B723489E1A0030BD0A /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				BB937B7E23413B2F00490731 /* NetWorkAndBind.swift */,
 				BBCB27B723489E1A0030BD0A /* Observer.swift */,
+				BBC79228234CDF390075E45D /* APIConnect.swift */,
 			);
 			path = NetWorkAndBind;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				BBCB27B823489E1A0030BD0A /* Observer.swift in Sources */,
 				BB053A44233EFBFA00577489 /* ViewModel.swift in Sources */,
 				BBCB2788233F54D00030BD0A /* URLComponent.swift in Sources */,
+				BBC79229234CDF390075E45D /* APIConnect.swift in Sources */,
 				BB053A31233EFA9100577489 /* ViewController.swift in Sources */,
 				BB937B7F23413B2F00490731 /* NetWorkAndBind.swift in Sources */,
 				BB937B812342528300490731 /* APIModel.swift in Sources */,

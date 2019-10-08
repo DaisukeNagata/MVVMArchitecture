@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ViewModel: Observer {
+class ViewModel: Observer, APIConnect {
 
     var api            : APIModel? = nil
     var model          : Observable<Model>?
