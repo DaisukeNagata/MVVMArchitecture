@@ -23,6 +23,8 @@ class ViewModel: Observer {
     func conect(_ url: URL) { api?.networkIsReady(url, completion: valueSet) }
 
     func valueSet(_ model: Any) { self.model?.value = model as? Model }
+    
+    func titleSet(_ model: Any) { self.modelPrimitive?.value = model as? ModelPrimitive }
 
     func observe<O>(for observable: Observable<O>, with: @escaping (O) -> Void) { observable.bind(observer: with) }
 }
