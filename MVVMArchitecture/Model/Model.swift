@@ -19,6 +19,7 @@ struct Model: Codable {
       }
 }
 
-enum ModelPrimitive {
-    case count(String, String), title
+class ModelPrimitive {
+    var one = String()
+    var two = String()
 }
