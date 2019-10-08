@@ -13,7 +13,6 @@ final class ViewController: UIViewController {
     let views = DesinView(vm: ViewModel(),labelOne: UILabel(), imageOne: UIImageView(), labelTwo: UILabel(), imageTwo: UIImageView(), bt: UIButton())
     let sample = ModelPrimitive()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
