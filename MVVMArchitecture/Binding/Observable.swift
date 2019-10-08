@@ -5,6 +5,7 @@
 //  Created by 永田大祐 on 2019/09/28.
 //  Copyright © 2019 永田大祐. All rights reserved.
 //
+import Foundation
 
 final class Observable<ObservedType> {
 
@@ -12,10 +13,7 @@ final class Observable<ObservedType> {
 
     var value: ObservedType? {
         didSet {
-            guard value.debugDescription.contains(oldValue.debugDescription) else {
-                if let value = value { notifyObservers(value) }
-                return
-            }
+            if let value = value { notifyObservers(value) }
         }
     }
 
