@@ -19,7 +19,7 @@ struct Model: Codable {
       }
 }
 
-class ModelPrimitive {
-    var one = String()
-    var two = String()
+struct ModelPrimitive {
+    var one: String?
+    var two: String?
 }

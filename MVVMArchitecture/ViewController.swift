@@ -11,7 +11,7 @@ import UIKit
 final class ViewController: UIViewController {
 
     let views = DesinView(vm: ViewModel(),labelOne: UILabel(), imageOne: UIImageView(), labelTwo: UILabel(), imageTwo: UIImageView(), bt: UIButton())
-    let sample = ModelPrimitive()
+    var sample = ModelPrimitive()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,10 @@ final class ViewController: UIViewController {
 
     @objc func btAction() {
         if sample.one == "11"  {
-            views.vm.modelPrimitive?.value = nil
-            sample.one = "1"
-            sample.two = "2"
+            sample.one = "11"
+            sample.two = "22"
             views.vm.titleSet(sample)
         } else {
-            views.vm.modelPrimitive?.value = nil
             sample.one = "11"
             sample.two = "22"
             views.vm.titleSet(sample)
