@@ -19,7 +19,7 @@ final class ApiClient {
             delegate: nil,
             delegateQueue: OperationQueue.main
         )
-        
+
         let task = session.dataTask(with: request) {  data, response, error in do {
             if let data = data, let response = response { completion(data, response, error) }
             }
