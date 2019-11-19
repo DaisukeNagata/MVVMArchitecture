@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DesinView: UIView {
+class DesinView: UIView {
 
     let vm      : ViewModel
     let labelOne: UILabel
@@ -97,7 +97,7 @@ final class DesinView: UIView {
         vm.observe(for: vm.model ?? Observable()) {
             [weak self] value in
             guard let selfStrong = self else { return }
-            _ = value.body.map { v in
+            value.body.map { v in
                 let data = try? Data(contentsOf: v.url)
                 let ima = UIImage(data: data ?? Data())
 
@@ -107,7 +107,7 @@ final class DesinView: UIView {
                 }
                 selfStrong.labelOne.text = v.title
                 selfStrong.imageOne.image = ima
-            }
+            }.first
         }
     }
 

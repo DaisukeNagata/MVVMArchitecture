@@ -8,7 +8,7 @@
 
 final class Observable<ObservedType> {
 
-    typealias Observer = (_ observable: ObservedType) -> Void
+    typealias Observer = (_ observable: ObservedType) -> ()
 
     var value: ObservedType? {
         didSet {
@@ -23,5 +23,7 @@ final class Observable<ObservedType> {
 
     func bind(observer: @escaping Observer) { self.observers.append(observer) }
 
-    private func notifyObservers(_ value: ObservedType) { self.observers.forEach { observer in observer(value) } }
+    private func notifyObservers(_ value: ObservedType) { self.observers.forEach { observer in observer(value) }
+
+    }
 }
